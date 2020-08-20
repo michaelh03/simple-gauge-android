@@ -116,11 +116,6 @@ public class HalfGauge extends AbstractGauge {
         canvas.restore();
 
 
-        canvas.save();
-        canvas.translate((getWidth() / 2f) - ((getRectRight() / 2f) * getScaleRatio()), getHeight() / 2f - 50f * getScaleRatio());
-        canvas.scale(getScaleRatio(), getScaleRatio());
-        canvas.drawText(getValue() + "", 200f, 240f, getTextPaint());
-        canvas.restore();
 
 
         //draw Text Value
