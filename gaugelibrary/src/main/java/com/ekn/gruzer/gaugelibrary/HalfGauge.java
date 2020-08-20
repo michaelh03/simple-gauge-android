@@ -34,6 +34,9 @@ public class HalfGauge extends AbstractGauge {
     private boolean enableBackGroundShadow = true;
     private boolean enableNeedleShadow = true;
     private boolean enableAnimation = true;
+    private boolean showValueText = true;
+    private boolean showMinValue = true;
+    private boolean showMaxValue = true;
 
 
     private Runnable runnable = new Runnable() {
@@ -121,11 +124,21 @@ public class HalfGauge extends AbstractGauge {
 
 
         //draw Text Value
-        drawValueText(canvas);
+        if (showValueText) {
+            drawValueText(canvas);
+        }
+
         //drawMinValue
-        drawMinValue(canvas);
+        if (showMinValue) {
+            drawMinValue(canvas);
+        }
+
         //drawMaxValue
-        drawMaxValue(canvas);
+        if (showMaxValue) {
+            drawMaxValue(canvas);
+        }
+
+
     }
 
     private void drawValueText(Canvas canvas) {
@@ -245,4 +258,17 @@ public class HalfGauge extends AbstractGauge {
     public boolean isEnableAnimation() {
         return enableAnimation;
     }
+
+    public boolean isShowValueText() { return showValueText; }
+
+    public void setShowValueText(boolean showValueText) { this.showValueText = showValueText; }
+
+    public boolean isShowMinValue() { return showMinValue; }
+
+    public void setShowMinValue(boolean showMinValue) { this.showMinValue = showMinValue; }
+
+    public boolean isShowMaxValue() { return showMaxValue; }
+
+    public void setShowMaxValue(boolean showMaxValue) { this.showMaxValue = showMaxValue; }
+
 }
